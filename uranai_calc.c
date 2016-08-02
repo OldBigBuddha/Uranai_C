@@ -23,17 +23,6 @@ int main(void) {
 
   funcScan();
 
-  // // 繰り返し
-  // while (count == 0) {
-  //
-  //   // Enter待ち処理
-  //     enter = getchar();
-  //     if (enter = '\n') {
-  //       funcScan();
-  //     }
-  //
-  // }
-
   return 0;
 
 }
@@ -48,7 +37,6 @@ int descriptionFirst(void) {
   puts  ("【二人の名前を数値化し、相性を見る】");
   puts  ("という占いです");
   printf("以下の指示に従ってもらえばいけるはずです\n\n");
-  // printf("Enterを押してください");
 
 }
 
@@ -61,13 +49,14 @@ int funcScan() {
   puts("\tう=3");
   puts("\tえ=4");
   puts("\tお=5");
+  puts("\tん=0");
 
 // 数値入力
   printf("一人目の数値を入力してください:");
-  scanf("%d", &nameNumber_1);
+  scanf ("%d", &nameNumber_1);
 
   printf("二人目の数値を入力してください:");
-  scanf("%d", &nameNumber_2);
+  scanf ("%d", &nameNumber_2);
 
 // 計算処理へ
   funcCalc();
@@ -95,11 +84,11 @@ int funcCalc(void) {
 
 // 繰り返すか否か
 int askContinu(void) {
-  puts("続けますか？");
+  puts  ("続けますか？");
   printf("うん、もっとやりたい:0\n");
   printf("いやや、もううんざり:1\n");
   printf("Your Answer:");
-  scanf("%d", &count);
+  scanf ("%d", &count);
 
 // 続ける
   if (count == 0) {
@@ -107,9 +96,7 @@ int askContinu(void) {
     printf("それじゃ、再び始めますね\n\n");
     funcScan();
 
-    }
-
-  if (count == 1) {
+    } else if (count == 1) {
     puts("Thak you for using this app");
     puts("See you again");
     exit(0);
